@@ -16,11 +16,6 @@ class CandidatesController < ApplicationController
       render json: @candidate.errors, status: :unprocessable_entity
     end
   end
-  
-def get_candidates_info
-  req = Typhoeus::Request.new('',
-
-end
 
 
 private
