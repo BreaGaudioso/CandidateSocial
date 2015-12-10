@@ -26,6 +26,7 @@ task update_candidates: :environment do
       candidate.friends_count = tweet.user.friends_count
       candidate.statuses_count = tweet.user.statuses_count
       candidate.acct_created_at = tweet.user.created_at
+      #candidate.most_recent_tweet = tweet.text
       candidate.save
     end
   end
