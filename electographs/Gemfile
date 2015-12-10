@@ -15,6 +15,8 @@ gem 'foreman'
 
 gem "twitter"
 
+gem 'whenever', :require => false
+
 #pry
 gem 'pry'
 

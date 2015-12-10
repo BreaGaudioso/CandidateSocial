@@ -3,4 +3,7 @@ class CandidateSerializer < ActiveModel::Serializer
 
   has_many :tweets
 
+  def tweets
+    object.tweets.order("favorite_count DESC")
+  end
 end
