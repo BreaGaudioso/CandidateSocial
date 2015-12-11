@@ -1,26 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-candidates = Candidate.create([{ handle: '@HillaryClinton', party: 'Democratic'}, 
-  { handle: '@BernieSanders', party: 'Democratic'}, 
-  { handle: '@MartinOMalley', party: 'Democratic'},
-  { handle: '@realDonaldTrump', party: 'Republican'},
-  { handle: '@marcorubio', party: 'Republican'},
-  { handle: '@RandPaul', party: 'Republican'},
-  { handle: '@RickSantorum', party: 'Republican'},
-  { handle: '@JohnKasich', party: 'Republican'},
-  { handle: '@JebBush', party: 'Republican'},
-  { handle: '@RealBenCarson', party: 'Republican'},
-  { handle: '@ChrisChristie', party: 'Republican'},
-  { handle: '@CarlyFiorina', party: 'Republican'},
-  { handle: '@gov_gilmore', party: 'Republican'},
-  { handle: '@GovMikeHuckabee', party: 'Republican'},
-  { handle: '@GovernorPataki', party: 'Republican'},
-  { handle: '@LindseyGrahamSC', party: 'Republican'}
+candidates = Candidate.create([{ handle: '@HillaryClinton', party: 'Democratic', first_tweet: "Thanks for the inspiration @ASmith83 & @Sllambe - I'll take it from here... #tweetsfromhillary"}, 
+  { handle: '@BernieSanders', party: 'Democratic', first_tweet: "The campaign is now on Twitter - and looking for input! What would you like to see here?"}, 
+  { handle: '@MartinOMalley', party: 'Democratic', first_tweet: "can't wait to get to Denver - it's going to be a really great week. keep checking back - many more updates to follow"},
+  { handle: '@realDonaldTrump', party: 'Republican', first_tweet: "Be sure to tune in and watch Donald Trump on Late Night with David Letterman as he presents the Top Ten List tonight!"},
+  { handle: '@marcorubio', party: 'Republican', first_tweet: "Gov. Pawlenty was impressive this morning at gopac"},
+  { handle: '@RandPaul', party: 'Republican', first_tweet: "Here is a video of my inaugural statement: http://bit.ly/dHYJGG"},
+  { handle: '@RickSantorum', party: 'Republican', first_tweet: "Friday i start as the permanent host of the Bill Bennett radio show.  Tune in 6am ET.  Healthcare wil be the focus."},
+  { handle: '@JohnKasich', party: 'Republican', first_tweet: "is using Twitter for the first time."},
+  { handle: '@JebBush', party: 'Republican', first_tweet: "Kudos to the Florida Senate leadership for their bold education agenda this session.  Follow us at www.foundationforfloridasfuture.org."},
+  { handle: '@RealBenCarson', party: 'Republican', first_tweet: "Today I've officially joined the twitterverse."},
+  { handle: '@ChrisChristie', party: 'Republican', "one just wasn't enough - 4 more years... Let's do this, NJ! #NJGov #strongleadership"},
+  { handle: '@CarlyFiorina', party: 'Republican', first_tweet: "Carlyfornia Dreamin’!!! Check it out today at CarlyforCalifornia.com"},
+  { handle: '@gov_gilmore', party: 'Republican', first_tweet: "Hope to see many friends in Bethesda tomorrow morning (bright and early!) 8:30am at Doubletree Hotel Wisconsin Ave"},
+  { handle: '@GovMikeHuckabee', party: 'Republican', first_tweet: "Hope to see many friends in Bethesda tomorrow morning (bright and early!) 8:30am at Doubletree Hotel Wisconsin Ave"},
+  { handle: '@GovernorPataki', party: 'Republican', first_tweet: "Happy to be in NH campaigning with Eddie Edwards for NH State Senate. "},
+  { handle: '@LindseyGrahamSC', party: 'Republican', first_tweet: "I'm excited about a new way to share my thoughts on political matters. Stay tuned. #scpol #sctweets #scgop #gop"}
 ])

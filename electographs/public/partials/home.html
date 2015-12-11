@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+    <h2>PoliTweet</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-xs-3">
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h2>Candidates</h2>
+        </div>
+        <div class="col-lg-12 col-xs-12" ng-repeat='candidate in vm.Candidates'>
+           <h4><img class="candidatePhotos"src="{{candidate.picture}}"alt="Photo of {{candidate.name}}"/>
+            {{candidate.name}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-xs-9">
+    <img src="http://lorirtaylor.com/wp-content/uploads/2014/09/Infographic.jpg" height="800px" width="700px">
+</div>
+</div>
+

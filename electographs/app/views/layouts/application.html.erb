@@ -3,12 +3,15 @@
 <head>
   <title>Electographs</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+
+  <base href="/application.html.erb">
+
 </head>
-<body>
+<body ng-app="app">
 
-<%= yield %>
-
+    <div class="container" ng-view></div>
+    
 </body>
 </html>

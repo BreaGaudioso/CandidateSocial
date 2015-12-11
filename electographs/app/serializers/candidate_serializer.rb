@@ -1,5 +1,5 @@
 class CandidateSerializer < ActiveModel::Serializer
-  attributes :id, :handle
+  attributes :id, :handle, :name, :party, :picture, :location, :description, :followers_count, :friends_count
 
   has_many :tweets
 

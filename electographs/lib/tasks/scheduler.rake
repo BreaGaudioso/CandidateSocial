@@ -9,11 +9,6 @@ client = Twitter::REST::Client.new(config)
 
 bearer_token = client.token
 
-
-task :test_file do
-  puts "I WORK"
-end
-
 task update_candidates: :environment do
   Candidate.all.each do |c|
     client.search("from:#{c.handle}", result_type: "recent").take(1).each do |tweet|  
@@ -35,6 +30,14 @@ end
 task popular_tweet_search: :environment do
   Candidate.all.each do |candidate|
     client.search("from:#{candidate.handle}", result_type: "popular").each do |tweet|
+      Tweet.all.each do |saved_tweet|
+        if tweet.id == saved_tweet.tweet_id
+          updateTweet = Tweet.find(saved_tweet.tweet_id)      
+          updateTweet.favorite_count = tweet.favorite_count
+          updateTweet.retweet_count = tweet.retweet_count
+          updateTweet.save
+        end
+      end
       t = Tweet.new
       t.text = tweet.text
       t.posted_at = tweet.created_at
