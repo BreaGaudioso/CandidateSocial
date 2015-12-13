@@ -14,7 +14,6 @@ task update_candidates: :environment do
     client.search("from:#{c.handle}", result_type: "recent").take(1).each do |tweet|  
       candidate = Candidate.find(c.id)
       candidate.name = tweet.user.name
-      candidate.picture = tweet.user.profile_image_url
       candidate.location = tweet.user.location
       candidate.description = tweet.user.description
       candidate.followers_count = tweet.user.followers_count

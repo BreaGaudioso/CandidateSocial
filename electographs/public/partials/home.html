@@ -1,24 +1,49 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 text-center">
-    <h2>PoliTweet</h2>
+<div class="row">
+  <div class="col-lg-3 col-sm-3 col-xs-3" id="wrapper">
+    <div id="sidebar-wrapper">
+      <h3 ng-click="vm.showCandidate()" class="candidateThumbnails" src="/assets/Drawing.jpg}"alt="Photo of logo"> about photo
+      </h3>
+            <h3 ng-click="vm.showCandidate()" class="candidateThumbnails" src="/assets/Drawing.jpg}"alt="Photo of logo"> all candidates photo
+      </h3>
+      <h3 ng-repeat='candidate in vm.Candidates'>
+        <img ng-mouseover="ya = !ya" ng-mouseleave="ya =!ya" ng-click="vm.showCandidate(candidate.id)" class="candidateThumbnails"src="{{candidate.picture}}"alt="Photo of {{candidate.name}}"/>
+        <h4 ng-if="ya">{{candidate.name}}</h4>
+        <h5 ng-if="ya">{{candidate.party}} Party</h5>
+      </h3>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-lg-3 col-xs-3">
+    <div class="col-lg-9 text-center">
+      <h1>Candidate Social</h1>
       <div class="row">
-        <div class="col-lg-12 col-xs-12">
-          <h2>Candidates</h2>
-        </div>
-        <div class="col-lg-12 col-xs-12" ng-repeat='candidate in vm.Candidates'>
-           <h4><img class="candidatePhotos"src="{{candidate.picture}}"alt="Photo of {{candidate.name}}"/>
-            {{candidate.name}}</h4>
-        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+          <div class="infographic" ng-if="!vm.chosenCandidate">
+            <h3>This can be an infographic about the project</h3>
+          </div>
+          <div class="infographic" ng-if="vm.chosenCandidate">
+            <div class="row">
+              <div class="col-lg-8">
+                <h4>{{vm.chosenCandidate.name}}</h4>
+                <h4>{{vm.chosenCandidate.handle}}</h4>
+                <h5> {{vm.chosenCandidate.party}}</h5>
+                <h5> {{vm.chosenCandidate.location}}</h5>
+                <h5> {{vm.chosenCandidate.description}}</h5>
+                <h3>Total Tweets {{vm.chosenCandidate.statuses_count}}</h3>
+                <h3>Account Created on {{vm.acctCreatedAt}}</h3>
+                <h3>Average tweets per day {{vm.tweetsPerDay}}</h3>
+                <h3>Followers {{vm.chosenCandidate.followers_count}}</h3>
+                <h3>Following {{vm.chosenCandidate.friends_count}}</h3>
+              </div>
+            <div class="col-lg-4">
+              <h4><img class="candidatePhoto"src="{{vm.chosenCandidate.picture}}"></h4>
+              <p ng-repeat="tweet in vm.chosenCandidate.tweets">
+                {{tweet.text}}</br>
+                {{tweet.posted_at}}</br>
+                Favors: {{tweet.favorite_count}}</br>
+                Retweets: {{tweet.retweet_count}}</br>
+
+            </div>
+          </div>
       </div>
     </div>
-    <div class="col-lg-9 col-xs-9">
-    <img src="http://lorirtaylor.com/wp-content/uploads/2014/09/Infographic.jpg" height="800px" width="700px">
-</div>
 </div>
 

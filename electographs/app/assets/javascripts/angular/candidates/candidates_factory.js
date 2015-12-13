@@ -7,7 +7,7 @@
   CandidatesFactory.$inject = ['$resource'];
 
   function CandidatesFactory($resource){
-    return $resource('/api/candidates', {id: '@id'});
+    return $resource('/api/candidates/:id', {id: '@id'});
   };
 
 })();
