@@ -1,34 +1,186 @@
 
 .backgroundImage{ 
-  background: url('redwhiteblue.jpg') no-repeat center center fixed; 
+/*  background: url('redwhiteblue.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 body{ 
-color: black;
+color: white;
+background-color: black;
 }
 
 
 .infographic{ 
 background-color: white;
 color: black;
+margin-top: 40px;
 }
 
 .candidateThumbnails{
   height: 100px;
   width: 150px;
+  margin:0px;
+  opacity: 0.5;
 }
 
+.candidateThumbnails:hover{
+  opacity: 1;
+}
 .candidatePhoto{
-  height:200px;
-  width:250px;
+  height:100%;
+  width:100%;
 }
 
 #canNav{
   background-color: white;
   margin-left: 0px;
   position: absolute;
+}
+
+#sidebar-wrapper{
+  height:800px;
+  overflow: scroll;
+}
+
+#headbanner{
+background-color: black;
+height: 240px;
+}
+
+
+.circle
+{
+  height: 300px;
+  width: 300px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: black;
+  padding:10px;
+}
+
+#circleInverse
+{
+  height: 300px;
+  width: 300px;
+  display: table-cell;
+  text-align: center;
+  color: black;
+  vertical-align: middle;
+  border: 5px black solid;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: white;
+  padding:10px;
+}
+
+.smallCircle
+{
+  height: 120px;
+  width: 120px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: black;
+}
+
+.dem
+{
+  height: 100px;
+  width: 100px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 75%; /* may require vendor prefixes */
+  background: #1020bd;
+}
+
+.red
+{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 5px;
+  color: white;
+  vertical-align: middle;
+  background: #db1a1a;
+}
+
+.blue
+{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+  vertical-align: middle;
+  background: #1020bd;
+}
+
+.black
+{
+  height: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+  vertical-align: middle;
+  background: black;
+}
+
+.blackInverse
+{
+  height: 60px;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: black;
+  padding-top: 5px;
+  vertical-align: middle;
+  background: white;
+  border: 2px solid black;
+}
+
+.bigBlack
+{
+  height: 60px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  padding-top: 5px;
+  vertical-align: middle;
+  background: black;
+  border: 2px solid white;
+}
+
+
+
+a{
+  color: black;
+}
+a:hover{
+  background-color: black;
+  color:white;
+}
+
+#static{
+  border-left: 10px solid black;
+  border-bottom: 10px solid black;
+}
+
+
+#smallText{
+  font-size: 20px;
 }
