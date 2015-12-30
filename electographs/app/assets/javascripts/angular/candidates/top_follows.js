@@ -2,14 +2,14 @@
 
   angular
   .module('app.candidates')
-  .directive('singleAll',singleAll);
+  .directive('topFollows',topFollows);
 
-  singleAll.$inject = ['d3Factory', '$window'];
+  topFollows.$inject = ['d3Factory', '$window'];
 
-  function singleAll(d3Factory, $window){
+  function topFollows(d3Factory, $window){
     return{
       restrict: 'EA',
-      templateUrl : 'partials/singleBar.html',
+      templateUrl : 'partials/topFollows.html',
       scope: {
         data: '='
       },
@@ -83,7 +83,7 @@
               'width': xScale.rangeBand()/5,
               'height': function(d) { return height - yScale(d.number)}
             })
-            .style("fill", function(d, i){return 'rgb(20,20,' + ((i*30) + 100) + ')' })
+            .style("fill", function(d, i){return 'rgb(255, 0, 0)' })
           
           svg.append("g")
             .attr("class", "xAxis")

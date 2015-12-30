@@ -50,6 +50,8 @@ task popular_tweet_search: :environment do
   end
 end
 
+
+
 task updates_database: [:update_candidates, :popular_tweet_search] do
   puts "running"
 end

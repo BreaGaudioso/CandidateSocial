@@ -1,22 +1,14 @@
 
-.backgroundImage{ 
-/*  background: url('redwhiteblue.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
-}
-
 body{ 
 color: white;
 background-color: black;
 }
 
-
 .infographic{ 
 background-color: white;
 color: black;
 margin-top: 40px;
+margin-bottom:100px;
 }
 
 .candidateThumbnails{
@@ -41,7 +33,7 @@ margin-top: 40px;
 }
 
 #sidebar-wrapper{
-  height:800px;
+  height:900px;
   overflow: scroll;
 }
 
@@ -50,11 +42,9 @@ background-color: black;
 height: 240px;
 }
 
-
-.circle
-{
-  height: 330px;
-  width: 330px;
+#circle{
+  height: 180px;
+  width: 180px;
   display: table-cell;
   text-align: center;
   color: white;
@@ -62,12 +52,15 @@ height: 240px;
   border-radius: 50%; /* may require vendor prefixes */
   background: black;
   padding:10px;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
-#circleInverse
+#circleGradient
 {
-  height: 330px;
-  width: 330px;
+  height: 180px;
+  width: 180px;
   display: table-cell;
   text-align: center;
   color: black;
@@ -76,6 +69,14 @@ height: 240px;
   border-radius: 50%; /* may require vendor prefixes */
   background: white;
   padding:10px;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  background: url('redwhiteblue.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .smallCircle
@@ -88,6 +89,9 @@ height: 240px;
   vertical-align: middle;
   border-radius: 50%; /* may require vendor prefixes */
   background: black;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 
 }
 
@@ -113,6 +117,9 @@ height: 240px;
   color: white;
   vertical-align: middle;
   background: #db1a1a;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
 .blue
@@ -120,10 +127,14 @@ height: 240px;
   height: 40px;
   width: 100%;
   text-align: center;
-  color: white;
+  margin-top: 10px;
   padding-top: 5px;
+  color: white;
   vertical-align: middle;
   background: #1020bd;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
 .black
@@ -136,6 +147,13 @@ height: 240px;
   padding-top: 5px;
   vertical-align: middle;
   background: black;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-border-radius: 5px 5px 5px 5px; 
+  -moz-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .white
@@ -149,6 +167,19 @@ height: 240px;
   vertical-align: middle;
   background: white;
   border: 2px solid black;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-border-radius: 5px 5px 5px 5px; 
+  -moz-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+    background: url('redwhiteblue.jpg') repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 .blackInverse
@@ -156,6 +187,7 @@ height: 240px;
   height: 60px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
   color: black;
   padding-top: 5px;
@@ -177,6 +209,9 @@ height: 240px;
   vertical-align: middle;
   background: black;
   border: 2px solid white;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
 
@@ -246,4 +281,30 @@ rect {
 }
 rect:hover{
   opacity: 0.4;
+}
+
+#talkBubble {
+   width: 75%;
+   padding: 5%;
+   height: 180px;
+   color: white;
+   background: black;
+   position: relative;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+   margin-left: 15px;
+   margin-top: 5px;
+
+}
+#talkBubble:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid black;
+   border-bottom: 13px solid transparent;
 }
