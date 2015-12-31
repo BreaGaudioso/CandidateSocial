@@ -18,7 +18,7 @@
           var margin = { top: 30, right:10, bottom: 100, left:80} ,
           w = 600 - margin.right - margin.left,
           h = 400 - margin.top - margin.bottom;
-          var colors = ["#db1a1a", "#1020bd"];
+          var colors = ["#1020bd", "#db1a1a"];
 
           var svg = d3.select("#popularTweets")
           .append("svg")
@@ -46,11 +46,11 @@
           .rangeRoundBands([0, w], 0.05);
         
         var yScale = d3.scale.linear()
-          .domain([0, d3.max(data, function(d) {return d.retweet_count;})]) 
+          .domain([0, d3.max(data, function(d) {return d.favorite_count;})]) 
           .range([h,0]);
 
-        var retweet_count = function(d) {
-          return d.retweet_count;
+        var favorite_count = function(d) {
+          return d.favorite_count;
         };
         
         var text = function(d) {
@@ -79,7 +79,7 @@
 
                   // create the text I want in the tooltip
 
-                toolTipText = (`${d.candidate.na} \ ${d.text} \ Retweets:${d.retweet_count} \ Favors: ${d.favorite_count}`) 
+                toolTipText = (`${d.candidate.na} \ ${d.text} \ Retweets:${d.favorite_count} \ Favors: ${d.retweet_count}`) 
 
                   //Update Tooltip Position & value
                   d3.select("#tooltip")
@@ -98,11 +98,11 @@
                 .attr("class","friend")
                 .attr("width", x0Scale.rangeBand()/2)
                 .attr("y", function(d) {
-                    return yScale(d.favorite_count);
+                    return yScale(d.retweet_count);
                 })
                 .attr("x", x0Scale.rangeBand()/2)
                 .attr("height", function(d){
-                    return h - yScale(d.favorite_count);
+                    return h - yScale(d.retweet_count);
                 })
                 .attr("fill", colors[0])
 
@@ -110,10 +110,10 @@
                 .attr("class","follow")
                 .attr("width", x0Scale.rangeBand()/2)
                 .attr("y", function(d) {
-                    return yScale(d.retweet_count);
+                    return yScale(d.favorite_count);
                 })
                 .attr("height", function(d){
-                    return h - yScale(d.retweet_count);
+                    return h - yScale(d.favorite_count);
                 })
                 .attr("fill", colors[1])
 
