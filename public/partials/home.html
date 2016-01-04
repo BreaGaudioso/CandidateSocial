@@ -69,27 +69,65 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h2 class="red">All Candidates</h2>
+              <div id="longSpace"></div>
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div bars-all data="data"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div id="circle"><h3>Most Popular Tweet this week</h3><h5>{{topData[0].text}}</h5><h4> By {{topData[0].candidate.name}}
+                  </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                  <div bars-all data="topData">
+                  </div>
                 </div>
               </div>
-<!--               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h3> followers</h2>
-                  <div single-all data="vm.followersArray"></div>
-                </div>
-              </div>
- -->
 
-<!--               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div single-all data="vm.topTweetArray"></div>
+              <div class="row" id="blackBack">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <h3 class="white"> Most Followers</h3>
+                  <div id="most" style ='background-image: url({{vm.followersArray[0].picture}})'></div>
                 </div>
-              </div> -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div id="least" style ='background-image: url({{vm.followersArray[13].picture}})'></div>
+                  <h3 class="white"> Least Followers</h3>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <h3 class="white"> Most Following</h3>
+                  <div id="most" style ='background-image: url({{vm.followingArray[0].picture}})'></div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div id="least" style ='background-image: url({{vm.followingArray[13].picture}})'></div>
+                  <h3 class="white"> Least Following</h3>
+                </div>
+              </div>
+
+
+
+
+              <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div single-all data="vm.topTweetArray">
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                  <div id="longSpace"/>
+                  <div id="circle"><h2>Who sends the the most Tweets?</h2>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+
+
+
+
+
+
+
+
 
     <!--       specific candidate -->
           <div class="infographic container" ng-if="vm.each">
@@ -138,22 +176,35 @@
                     </div>        
                   </div>              
                 </div>
-                <div class="row">
-                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                     <div id="doublebarRow">
-                    <div barstwo data="data"></div></div>
-                  </div>
-                </div>
+        <div class="row text-center" id="blackBord">
+          <div class= "col-lg-4 col-xs-4 col-md-4 col-sm-4 text-center">
+              <h4 id="circleGradient"><b>#FOLLOWERS</b> <br/>{{vm.chosenCandidate.followers_count}}</h4>
+          </div>
+          <div class= "col-lg-4 col-xs-4 col-md-4 col-sm-4 text-center">
+            <div id="longSpace"/>
+            <h4 id="circleGradient"><b>#TOTAL TWEETS</b> <br/>{{vm.chosenCandidate.statuses_count}}</h4>
+          </div>
+          <div class= "col-lg-4 col-xs-4 col-md-4 col-sm-4 text-center">
+            <h4 id="circleGradient"><b>#FOLLOWING</b> <br/>{{vm.chosenCandidate.friends_count}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+            <div id="doublebarRow">
+              <div barstwo data="data">
               </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+
 
             <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 text-left">
               <div id="static">
                 <h4>
                   <img class="candidatePhoto"src="{{vm.chosenCandidate.picture}}">
                 </h4>
-<!--                 <h5>
-                  <a href="https://twitter.com/{{vm.followHandle}}" target="_blank" ><img height="40px" width="40px" src="assets/tweetBird.png"/>Follow {{vm.chosenCandidate.handle}}</a>
-                </h5> -->
                 <h4 ng-if="vm.chosenCandidate.party == 'Republican'" class="red"> A B O U T</h4>
                 <h4 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">A B O U T</h4>
                 <h5>
@@ -165,18 +216,21 @@
                 <h5>
                   <b>T</b>witter Description:</h5><h6>"{{vm.twitterDescription}}"
                 </h6>
-              <h4 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">IN THE NEWS</h4>
-              <h4 ng-if="vm.chosenCandidate.party == 'Republican'" class="red">IN THE NEWS</h4>
-              <h5> NEWS ARTICLES WILL GO HERE</h5>
-            </div>
-            <div class="row">
-              <div class= "col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                <h4 id="circleGradient">#FOLLOWERS <br/>{{vm.chosenCandidate.followers_count}}</h4></br>
-                <h4 id="circleGradient">#TOTAL TWEETS <br/>{{vm.chosenCandidate.statuses_count}}</h4></br>
-                <h4 id="circleGradient">FOLLOWING <br/>{{vm.chosenCandidate.friends_count}}</h4></br>
+              <div id="longSpace"/>
+              <h4 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">Recent Tweets</h4>
+              <h4 ng-if="vm.chosenCandidate.party == 'Republican'" class="red">Recent Tweets</h4>
+              <div id="canTweets">
+                <div ng-repeat='tweet in vm.chosenCandidate.tweets'>
+                  <h4>{{tweet.text}}</h4>
+                  <h5> Favors: {{tweet.favorite_count}} Retweets: {{tweet.retweet_count}}</h4>
+                    <hr/>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
 <!--       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div barstwo data="data"></div>
@@ -190,4 +244,77 @@
     </div>
   </div>
 </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--             <div class="row">
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <h2 class="white">Top Followers</h2>
+                <h4 id="circleGradient"> {{vm.followersArray[0].name}} {{vm.followersArray[0].number}} </h4>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <h2 class="white">Most frequent tweeter </h2>
+                <h4 id="circleGradient">Top followers: {{vm.topTweetArray[0].name}}</h4>
+
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <h4 id="circleGradient">Most following</h4>
+              </div>
+            </div> -->
+
+<!--               <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3> followers</h2>
+                  <div single-all data="vm.followersArray"></div>
+                </div>
+              </div>
+ -->
+
+
+<!-- 
+
+
+               <div class="row" id="blackBack">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <h2 class="red"> {{vm.followersArray[0].name}}</h4>
+                      <h3 class="blue">{{vm.followersArray[0].number}}</h3>
+                    </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div id="most" style ='background-image: url({{vm.followersArray[0].picture}})'>
+                    </div>
+                  </div>
+                </div>
+                <h1> Most Followers</h1>
+              </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                  <h2 class="text-right"> Least Followers</h3>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <div id="least" style ='background-image: url({{vm.followersArray[13].picture}})'></div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <h2 class="red"> {{vm.followersArray[13].name}}</h4>
+                      <h3 class="blue">{{vm.followersArray[13].number}}</h3>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div> -->
+
 

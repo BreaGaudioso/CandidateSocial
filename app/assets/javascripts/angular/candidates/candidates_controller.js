@@ -15,7 +15,6 @@
     vm.percentVAPVotes = 54.87;  
 
    vm.aboutRender = function(){
-    console.log('yo');
       vm.all = false;
       vm.about = true;
       vm.each = false;
@@ -55,6 +54,7 @@
    var array =[]
     data.candidates.forEach(function(candidate){
       var newObj = {name: candidate.name,
+                    picture: candidate.picture,
                     number: candidate.followers_count,
                     graph: 'Ratings by followers'}
       array.push(newObj);
@@ -68,10 +68,13 @@
   vm.TopFollowing = function(){CandidatesFactory.get({}).$promise.then(function(data){
     var array =[]
     data.candidates.forEach(function(candidate){
+      console.log(candidate)
       var newObj = {name: candidate.name,
+                    picture: candidate.picture,
                     number: candidate.friends_count,
                     graph: 'Ratings by followings'}
       array.push(newObj);
+            console.log("new", newObj);
     });
     vm.followingArray=array.sort(function(a,b){
       return parseFloat(b.number) - parseFloat(a.number);
@@ -109,7 +112,7 @@
       for (var i=0; i<10; i++){
         topData.push(allSort[i])
       }
-      $scope.data = topData;
+      $scope.topData = topData;
     })}
 
 //everything needed for candidate show
@@ -132,8 +135,10 @@
 //function to get the top 5 tweets of each candidate 
     vm.FavorData = function(tweets){
       vm.data = [];
-      for(var i=0; i<5; i++){
-        vm.data.push(tweets[i]);
+      for(var i=0; i< tweets.length; i++){
+        if(i <= 10){ 
+          vm.data.push(tweets[i]);
+        }
       }
       $scope.data = vm.data 
     };

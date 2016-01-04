@@ -43,8 +43,8 @@ height: 240px;
 }
 
 #circle{
-  height: 180px;
-  width: 180px;
+  height: 280px;
+  width: 280px;
   display: table-cell;
   text-align: center;
   color: white;
@@ -57,18 +57,36 @@ height: 240px;
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
+
+#littlecircle{
+  height: 80px;
+  width: 80px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: black;
+  padding:10px;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+
+
 #circleGradient
 {
-  height: 180px;
-  width: 180px;
+  height: 220px;
+  width: 220px;
   display: table-cell;
   text-align: center;
   color: black;
   vertical-align: middle;
-  border: 5px black solid;
   border-radius: 50%; /* may require vendor prefixes */
   background: white;
   padding:10px;
+  border: 1px solid black;
   -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
@@ -231,6 +249,11 @@ a:hover{
   margin-right:0px;
 }
 
+#canTweets{
+  height:800px;
+  overflow: scroll;
+}
+
 
 #smallText{
   font-size: 20px;
@@ -313,6 +336,24 @@ rect:hover{
   margin-top: 80px;
 }
 
+#most {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+#least {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
 #socialTags{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -323,4 +364,28 @@ rect:hover{
 #socialTags a :hover{
 color: white;
 background-color: grey;
+}
+
+#barWrap{
+  margin-top: 50px;
+}
+
+#blackBack{
+  background-color: black;
+  margin: 10px;
+}
+
+#centerText{
+  display: table-cell;
+  vertical-align:middle;
+  color: white;
+  text-align:center;
+}
+
+#blackBord{
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 4px dotted black;
+
 }
