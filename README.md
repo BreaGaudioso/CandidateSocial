@@ -1,7 +1,7 @@
-# capstone
+# Candidate Social
 
 ## Summary
- A data visualization project using the twitter API. The project creates real time infographics that allow users to see different data vizualizations of presidential candidates based on their twitters.
+ Candidate Social is a data visualization project using the twitter API. The project creates real time infographics that allow users to see different data vizualizations of presidential candidates based on their twitters. 
 
 ##Technologies:
 Backend: Ruby on Rails
