@@ -1,4 +1,3 @@
-
 body{ 
 color: white;
 background-color: black;
@@ -388,4 +387,12 @@ background-color: grey;
   padding-bottom: 10px;
   border: 4px dotted black;
 
+}
+
+#redLinks a{
+  color: #db1a1a;
+}
+
+#redLinks a :hover{
+  color: #1020bd;
 }

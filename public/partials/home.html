@@ -70,13 +70,18 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h2 class="red">All Candidates</h2>
               <div id="longSpace"></div>
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <div id="circle"><h3>Most Popular Tweet this week</h3><h5>{{topData[0].text}}</h5><h4> By {{topData[0].candidate.name}}
+
+
+                <div class="row">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                    <div id="longSpace"/>
+                    <div id="circle"><h2>How Many Tweets has Each Candidate Sent?</h2>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <div bars-all data="topData">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div single-all data="vm.topTweetArray">
                   </div>
                 </div>
               </div>
@@ -100,25 +105,26 @@
                 </div>
               </div>
 
-
-
-
+              <div id="longSpace"/>
+              <div id="longSpace"/>
               <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <div single-all data="vm.topTweetArray">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                  <h2 class="black"> Top Tweets this Week</h2>
+                  <div bars-all data="topData">
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                  <div id="longSpace"/>
-                  <div id="circle"><h2>Who sends the the most Tweets?</h2>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div id="circle"><h3>Most Popular Tweet this Week</h3><h5>{{topData[0].text}}</h5><h4> By {{topData[0].candidate.name}}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
 
 
@@ -190,6 +196,7 @@
         </div>
         <div class="row">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+            <h3 class="black"> Top Tweets by {{vm.chosenCandidate.name}} This Week</h2>
             <div id="doublebarRow">
               <div barstwo data="data">
               </div>
@@ -231,90 +238,13 @@
         </div>
       </div>
 
-<!--       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div barstwo data="data"></div>
-        </div>
-      </div> -->
 
-<!--       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        </div>
-      </div>
-    </div>
+<div id="longSpace"/>
+<div id="longSpace"/>
+<div class="text-center"><h4>CandidateSocial was created by Brea Gaudioso, a full-stack developer based out of Seattle, WA.</h4>
+  <div id="redLinks">
+    <a href="http://www.breagaudioso.com"> Website</a> || <a href="http://www.github.com/breagaudioso">Github</a> || <a href="http://twitter.com/breagaudioso"> Twitter </a>
   </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--             <div class="row">
-              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <h2 class="white">Top Followers</h2>
-                <h4 id="circleGradient"> {{vm.followersArray[0].name}} {{vm.followersArray[0].number}} </h4>
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <h2 class="white">Most frequent tweeter </h2>
-                <h4 id="circleGradient">Top followers: {{vm.topTweetArray[0].name}}</h4>
-
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <h4 id="circleGradient">Most following</h4>
-              </div>
-            </div> -->
-
-<!--               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h3> followers</h2>
-                  <div single-all data="vm.followersArray"></div>
-                </div>
-              </div>
- -->
-
-
-<!-- 
-
-
-               <div class="row" id="blackBack">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                      <h2 class="red"> {{vm.followersArray[0].name}}</h4>
-                      <h3 class="blue">{{vm.followersArray[0].number}}</h3>
-                    </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div id="most" style ='background-image: url({{vm.followersArray[0].picture}})'>
-                    </div>
-                  </div>
-                </div>
-                <h1> Most Followers</h1>
-              </div>
-
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                  <h2 class="text-right"> Least Followers</h3>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                      <div id="least" style ='background-image: url({{vm.followersArray[13].picture}})'></div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                      <h2 class="red"> {{vm.followersArray[13].name}}</h4>
-                      <h3 class="blue">{{vm.followersArray[13].number}}</h3>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div> -->
-
+</div>
+<div id="longSpace"/>
 
