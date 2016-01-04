@@ -1,0 +1,193 @@
+<div class="row">
+  <div class="col-lg-8 text-left">
+    <h1 class="bigBlack"># C A N D I D A T E   S O C I A L</h1>
+  </div>
+</div>
+
+<!-- sidebar -->
+<div class="row">
+  <div class="col-lg-2 col-sm-2 col-xs-2" id="wrapper">
+    <div id="sidebar-wrapper">
+    <img class="candidateThumbnails" ng-click="vm.aboutRender()" src="/assets/about.png"alt="Photo of logo"/></br>
+    <img ng-click="vm.allRender()" class="candidateThumbnails" src="/assets/all.png"alt="Photo of logo"/>
+      <div ng-repeat='candidate in vm.candidateFollowSort'>
+        <img ng-mouseover="ya = !ya" ng-mouseleave="ya =!ya" ng-click="vm.showCandidate(candidate.id)" class="candidateThumbnails"src="{{candidate.picture}}"alt="Photo of {{candidate.name}}"/>
+        <h4 ng-if="ya">{{candidate.name}}</h4>
+        <h5 ng-if="ya">{{candidate.party}} Party</h5>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-lg-10">
+    <div class="row">
+      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+              <!--       about -->
+        <div class="infographic container" ng-if="vm.about">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <h2 class="red"> Get Social with the 2016 Presidential Candidates </h2>
+              <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-16 col-sm-6 col-xs-6">
+                      <h3 class="black">DID  YOU  KNOW...</h3>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                      <h3 class="blackInverse" id="smallText"><strong>Less than</strong> 55% of eligible voters voted in the last Presidential Election.</h3>
+                    </div>
+                  </div>
+
+                  <div clas="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                      <h3><img src="/assets/voters.png"></h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="static">
+                  <h3 class="black"># A N A L Y Z E</h3> 
+                  <h4>
+                    Check out the twitter accounts of candidates you are interested in. See everything from their most popular tweets right now, to their first ( and most likely embarrassing) tweet ever!
+                  </h4>
+                  <h3 class="black"># C O M P A R E</h3> 
+                  <h4>See how your favorite candidates stack up again others.</h4>
+                  <h3 class="black"># S H A R E</h3> 
+                  <h4>
+                    Candidate Social offers you relevant shareable infographics with your friends. Unlike most graphics that become obsolete soon after they are posted, Candidate Social’s analyzations are always current.
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="infographic container" ng-if="vm.all">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <h2 class="red">All Candidates</h2>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div bars-all data="data"></div>
+                </div>
+              </div>
+<!--               <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3> followers</h2>
+                  <div single-all data="vm.followersArray"></div>
+                </div>
+              </div>
+ -->
+
+<!--               <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div single-all data="vm.topTweetArray"></div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+    <!--       specific candidate -->
+          <div class="infographic container" ng-if="vm.each">
+            <div class="row">
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <h2 ng-if="vm.chosenCandidate.party == 'Republican'" class="red">{{vm.chosenCandidate.name}}</h2>
+                <h2 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">{{vm.chosenCandidate.name}}</h2>
+                <div id="longSpace"/>
+
+                <div class="row text-center" id="socialTags">
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <a href="{{vm.chosenCandidate.facebook_link}}" target="_blank"><img height="40px" width="40px" src="assets/facebook3.svg"/></a>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <a href="https://twitter.com/{{vm.followHandle}}" target="_blank" ><img height="70px" width="70px" src="assets/twitter.svg"/></a>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <a href="{{vm.chosenCandidate.instagram_link}}" target="_blank" ><img height="40px" width="40px" src="assets/instagram19.svg"/></a>
+                  </div>                      
+                </div>
+                <h3 ng-if="vm.chosenCandidate.party == 'Republican'" class="blue"> </h3>
+                <h3 ng-if="vm.chosenCandidate.party == 'Democratic'" class="red"> </h3>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div id="longSpace">
+                      <div id="talkBubble">
+                        <h2> #F I R S T T W E E T</h2>
+                        <h5>"{{vm.chosenCandidate.first_tweet}}"</h5>
+                      </div>
+                    </div>
+
+                    <div id="longSpace">
+                      <h4 class="white">Average tweets per day: {{vm.tweetsPerDay | number:2 }}</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div id="longSpace">
+                      <h4 class="white">Twitter account created on {{vm.acctCreatedAt}}</h4>
+                    </div>
+                    <div id="longSpace">
+                      <div id="talkBubble">
+                        <h2> #L A S T T W E E T</h2>
+                        <h5>"{{vm.chosenCandidate.most_recent_tweet}}"</h5>
+                      </div> 
+                    </div>        
+                  </div>              
+                </div>
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                     <div id="doublebarRow">
+                    <div barstwo data="data"></div></div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 text-left">
+              <div id="static">
+                <h4>
+                  <img class="candidatePhoto"src="{{vm.chosenCandidate.picture}}">
+                </h4>
+<!--                 <h5>
+                  <a href="https://twitter.com/{{vm.followHandle}}" target="_blank" ><img height="40px" width="40px" src="assets/tweetBird.png"/>Follow {{vm.chosenCandidate.handle}}</a>
+                </h5> -->
+                <h4 ng-if="vm.chosenCandidate.party == 'Republican'" class="red"> A B O U T</h4>
+                <h4 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">A B O U T</h4>
+                <h5>
+                  <b>M</b>ember of the {{vm.chosenCandidate.party}} Party
+                </h5>
+                <h5>
+                  <b>R</b>esident of {{vm.chosenCandidate.location}}.
+                </h5>
+                <h5>
+                  <b>T</b>witter Description:</h5><h6>"{{vm.twitterDescription}}"
+                </h6>
+              <h4 ng-if="vm.chosenCandidate.party == 'Democratic'" class="blue">IN THE NEWS</h4>
+              <h4 ng-if="vm.chosenCandidate.party == 'Republican'" class="red">IN THE NEWS</h4>
+              <h5> NEWS ARTICLES WILL GO HERE</h5>
+            </div>
+            <div class="row">
+              <div class= "col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                <h4 id="circleGradient">#FOLLOWERS <br/>{{vm.chosenCandidate.followers_count}}</h4></br>
+                <h4 id="circleGradient">#TOTAL TWEETS <br/>{{vm.chosenCandidate.statuses_count}}</h4></br>
+                <h4 id="circleGradient">FOLLOWING <br/>{{vm.chosenCandidate.friends_count}}</h4></br>
+              </div>
+            </div>
+          </div>
+<!--       <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div barstwo data="data"></div>
+        </div>
+      </div> -->
+
+<!--       <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
