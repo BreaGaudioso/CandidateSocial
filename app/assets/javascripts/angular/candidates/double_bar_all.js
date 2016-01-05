@@ -79,7 +79,7 @@
 
                   // create the text I want in the tooltip
 
-                toolTipText = (`${d.candidate.name} \ ${d.text} \ Retweets:${d.favorite_count} \ Favors: ${d.retweet_count}`) 
+                toolTipText = "test string"
 
                   //Update Tooltip Position & value
                   d3.select("#tooltip")

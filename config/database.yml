@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: electographs_production
-  username: electographs
-  password: <%= ENV['ELECTOGRAPHS_DATABASE_PASSWORD'] %>
+  database: electographs_development

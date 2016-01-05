@@ -7,11 +7,11 @@ config = {
 
 p config
 
-client = Twitter::REST::Client.new(config)
-
-bearer_token = client.token
 
 task update_candidates: :environment do
+  client = Twitter::REST::Client.new(config)
+
+  bearer_token = client.token
   Candidate.all.each do |c|
     client.search("from:#{c.handle}", result_type: "recent").take(1).each do |tweet|  
       candidate = Candidate.find(c.id)
@@ -28,6 +28,9 @@ task update_candidates: :environment do
 end
 
 task popular_tweet_search: :environment do
+  client = Twitter::REST::Client.new(config)
+
+  bearer_token = client.token
   Candidate.all.each do |candidate|
     client.search("from:#{candidate.handle}", result_type: "popular").each do |tweet|
       Tweet.all.each do |saved_tweet|
