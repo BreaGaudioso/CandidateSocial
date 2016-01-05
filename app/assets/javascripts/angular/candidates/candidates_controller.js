@@ -68,13 +68,11 @@
   vm.TopFollowing = function(){CandidatesFactory.get({}).$promise.then(function(data){
     var array =[]
     data.candidates.forEach(function(candidate){
-      console.log(candidate)
       var newObj = {name: candidate.name,
                     picture: candidate.picture,
                     number: candidate.friends_count,
                     graph: 'Ratings by followings'}
       array.push(newObj);
-            console.log("new", newObj);
     });
     vm.followingArray=array.sort(function(a,b){
       return parseFloat(b.number) - parseFloat(a.number);
