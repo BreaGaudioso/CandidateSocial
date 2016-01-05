@@ -13,12 +13,7 @@ require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, :assets, Rails.env)
-
-# Enable the asset pipeline
-config.assets.enabled = true
-# Version of your assets, change this if you want to expire all your assets
-config.assets.version = '1.0'
+Bundler.require(*Rails.groups)
 
 module Electographs
   class Application < Rails::Application
