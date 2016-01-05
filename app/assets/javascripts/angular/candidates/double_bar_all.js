@@ -79,8 +79,7 @@
 
                   // create the text I want in the tooltip
 
-                toolTipText = "test string"
-
+                toolTipText = d.candidate.name +"   "+ d.text + "   " + "Favors:" + d.favorite_count +"   "+ "Retweets:" +d.retweet_count
                   //Update Tooltip Position & value
                   d3.select("#tooltip")
                       .style("left", xPosition + "px")
