@@ -5,6 +5,8 @@ config = {
   consumer_secret: ENV["CONSUMER_SECRET"]
 }
 
+p config
+
 client = Twitter::REST::Client.new(config)
 
 bearer_token = client.token
