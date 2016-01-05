@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-8 text-left">
-    <h1 class="bigBlack"># C A N D I D A T E   S O C I A L</h1>
+    <h1 class="bigBlack" ng-click="vm.aboutRender()"># C A N D I D A T E   S O C I A L</h1>
   </div>
 </div>
 
@@ -52,7 +52,7 @@
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="static">
                   <h3 class="black"># A N A L Y Z E</h3> 
                   <h4>
-                    Check out the twitter accounts of candidates you are interested in. See everything from their most popular tweets right now, to their first ( and most likely embarrassing) tweet ever!
+                    Check out the twitter accounts of candidates you are interested in. See everything from their most popular tweets right now, to their first tweets ever!
                   </h4>
                   <h3 class="black"># C O M P A R E</h3> 
                   <h4>See how your favorite candidates stack up again others.</h4>
@@ -71,42 +71,6 @@
               <h2 class="red">All Candidates</h2>
               <div id="longSpace"></div>
 
-
-                <div class="row">
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                    <div id="longSpace"/>
-                    <div id="circle"><h2>How Many Tweets has Each Candidate Sent?</h2>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div single-all data="vm.topTweetArray">
-                  </div>
-                </div>
-              </div>
-
-              <div class="row" id="blackBack">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <h3 class="white"> Most Followers</h3>
-                  <div id="most" style ='background-image: url({{vm.followersArray[0].picture}})'></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <div id="least" style ='background-image: url({{vm.followersArray[12].picture}})'></div>
-                  <h3 class="white"> Least Followers</h3>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <h3 class="white"> Most Following</h3>
-                  <div id="most" style ='background-image: url({{vm.followingArray[0].picture}})'></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <div id="least" style ='background-image: url({{vm.followingArray[12].picture}})'></div>
-                  <h3 class="white"> Least Following</h3>
-                </div>
-              </div>
-
-              <div id="longSpace"/>
-              <div id="longSpace"/>
               <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                   <h2 class="black"> Top Tweets this Week</h2>
@@ -120,6 +84,59 @@
                   </div>
                 </div>
               </div>
+
+
+
+
+
+              <div class="row text-center" id="blackBack">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <h2>{{vm.followersArray[0].name}}</h2>
+                  <h4 class="red"> Most Followers</h4>
+                  <h5>{{vm.followersArray[0].number}} people</h5>
+                  <div id="most" style ='background-image: url({{vm.followersArray[0].picture}})'>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div id="least" style ='background-image: url({{vm.followersArray[12].picture}})'></div>
+                  <h2> {{vm.followersArray[12].name}} </h2>
+                  <h4 class="blue"> Least Followers</h4>
+                  <h5>{{vm.followersArray[12].number}} people</h5>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <h2> {{vm.followingArray[0].name}}</h2>
+                  <h4 class="blue"> Following the Most</h4>
+                  <h5>{{vm.followingArray[0].number}} people</h5>
+                  <div id="most" style ='background-image: url({{vm.followingArray[0].picture}})'></div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div id="least" style ='background-image: url({{vm.followingArray[12].picture}})'></div>
+                  <h2> {{vm.followingArray[12].name}}</h2>
+                  <h4 class="red">Following the Least</h4>
+                  <h5>{{vm.followingArray[12].number}} people</h5>
+                </div>
+              </div>
+
+              <div id="longSpace"/>
+              <div id="longSpace"/>
+
+                <div class="row">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                    <div id="longSpace"/>
+                    <div id="circle"><h2>How Many Tweets has Each Candidate Sent?</h2>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div single-all data="vm.topTweetArray">
+                  </div>
+                </div>
+              </div>              
+
+
+
+
             </div>
           </div>
         </div>
